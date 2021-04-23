@@ -1,7 +1,7 @@
 # Objectives
-# instance methode(self)
-# can take arguments and return values
-# special "dunder" methods
+# instance methods(self)
+# our methods can take arguments and they return values
+# special "dunder" methods i.e __func__
 # @staticmethod
 
 # Lists
@@ -44,15 +44,18 @@ class SoftwareEngineer:
     def code_in_language(self, language):
         print(f'{self.name} writing code in {language}...')
 
+    # def information(self):
+    #     print(f'Name = {self.name}, Age = {self.age}, Level = {self.level}')
+
     # dunder method
     def __str__(self):
         information = f'Name = {self.name}, Age = {self.age}, Level = {self.level}'
         return information
 
-    def __eq__(self, other):
-        return self.name == other.name  and self.age == other.age
+    def __eq__(self, other):  # At default __eq__ function compare the memory address
+        return self.name == other.name and self.age == other.age
 
-    @staticmethod
+    @staticmethod  # Through this decorator we can use this function with class objects.
     def entry_salary(age):
         if age < 25:
             return 5000
@@ -65,6 +68,7 @@ ob_se1 = SoftwareEngineer('Software Engineer', "Chirag", 22, "Junior", 10000)
 ob_se2 = SoftwareEngineer("Software Engineer", "Rahul Verma", 27, "Senior", 50000)
 ob_se3 = SoftwareEngineer("Software Engineer", "Rahul Verma", 27, "Senior", 50000)
 
+print()
 ob_se1.code()
 ob_se2.code()
 print()
